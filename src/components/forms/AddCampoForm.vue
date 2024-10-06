@@ -19,7 +19,7 @@ const campo = ref<Campo>({ name: '', coordinates: { latitude: 0, longitude: 0 } 
 
 watch(model, (value) => {
   if (value) {
-    campo.value = { name: 'New Campo', coordinates: { latitude: coords.value.latitude, longitude: coords.value.longitude } }
+    campo.value = { name: 'New Field', coordinates: { latitude: coords.value.latitude, longitude: coords.value.longitude } }
   }
 })
 

@@ -17,7 +17,7 @@ const moistSRC = ref<string | null>(null)
 const vegetationSRC = ref<string | null>(null)
 const reflectanceSRC = ref<string | null>(null)
 
-const suggestions = ref<{ name: string, description: string }[]>([])
+const suggestions = ref<{ name: string, description: string, confidence: number }[]>([])
 const weatherData = ref<string[]>([])
 
 const api = useAPIStore()
@@ -76,7 +76,7 @@ onMounted(() => {
 
     <v-card-title>Suggestions:</v-card-title>
     <div class="suggestions pa-5">
-      <v-card class="suggestions-card" v-for="s of suggestions" :title="s.name" :text="s.description" color="surface-variant">
+      <v-card class="suggestions-card" v-for="s of suggestions" :title="s.name.toUpperCase()" :subtitle="`Confidence: ${s.confidence}`" :text="s.description" color="surface-variant">
       </v-card>
     </div>
 
@@ -101,7 +101,7 @@ onMounted(() => {
     </div>
 
     
-    <v-card-title>Historical Data:</v-card-title>
+    <v-card-title>Historical Data (2010 - NOW):</v-card-title>
     <v-card-text>
       <p v-for="d of weatherData">{{ d }}</p>
     </v-card-text>

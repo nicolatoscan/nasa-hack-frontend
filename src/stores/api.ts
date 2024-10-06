@@ -47,7 +47,7 @@ const useAPIStore = defineStore('api', () => {
     const response = await ax.post('/suggestions',
       { weatherData }
     )
-    return response.data as { name: string, description: string }[];
+    return response.data as { name: string, description: string, confidence: number }[];
   }
 
   return { getCampoColorato, getCampoMoisture, getVegetation, getReflectance, suggestions }

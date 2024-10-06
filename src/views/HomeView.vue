@@ -18,7 +18,7 @@ const addingCampo = ref(false)
       </v-card-text>
     </v-card>
     
-    <v-btn color="primary" @click="addingCampo = true">Aggiungi campo</v-btn>
+    <v-btn color="primary" @click="addingCampo = true">Add field</v-btn>
   </div>
 
   <AddCampoForm v-model="addingCampo" />
